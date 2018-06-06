@@ -99,7 +99,7 @@ class CmdRcon extends BasicCli implements CommandExecutor{
 			$port = isset($dat["rcon-port"]) ? $dat["rcon-port"] : $dat["port"];
 			$auth = $dat["rcon-pw"];
 
-			$this->owner->getServer()->getScheduler()->scheduleAsyncTask(
+			Server::getInstance()->getAsyncPool()->submitTask(
 				new RconTask($this->owner, "rconDone",
 					[$host, $port, $auth],
 					$cmd, [($c instanceof Player) ? $c->getName() : null])

@@ -62,7 +62,7 @@ class CmdAfterAt extends BasicCli implements CommandExecutor{
 	public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool{
 		// Collect expired tasks out of the tasks table...
 		foreach(array_keys($this->tasks) as $tid){
-			if(!$this->owner->getServer()->getScheduler()->isQueued($tid)){
+			if(!$this->owner->getScheduler()->isQueued($tid)){
 				unset($this->tasks[$tid]);
 			}
 		}
@@ -106,7 +106,7 @@ class CmdAfterAt extends BasicCli implements CommandExecutor{
 					$c->sendMessage(mc::_("Task %1% not found!", $args[1]));
 					return true;
 				}
-				$this->owner->getServer()->getScheduler()->cancelTask($args[1]);
+				$this->owner->getScheduler()->cancelTask($args[1]);
 				$c->sendMessage(mc::_("Cancelling Task %1%", $args[1]));
 				return true;
 		}
@@ -114,7 +114,7 @@ class CmdAfterAt extends BasicCli implements CommandExecutor{
 	}
 
 	public function schedule($secs, $cmdline){
-		$h = $this->owner->getServer()->getScheduler()->scheduleDelayedTask(
+		$h = $this->owner->getScheduler()->scheduleDelayedTask(
 			new PluginCallbackTask($this->owner, [$this, "runCommand"], [$cmdline]),
 			$secs * 20
 		);
@@ -129,7 +129,7 @@ class CmdAfterAt extends BasicCli implements CommandExecutor{
 		}
 		$secs = array_shift($args);
 		$c->sendMessage(mc::_("Scheduled for %1%", date(DATE_RFC2822, time() + $secs)));
-		$h = $this->owner->getServer()->getScheduler()->scheduleDelayedTask(
+		$h = $this->owner->getScheduler()->scheduleDelayedTask(
 			new PluginCallbackTask($this->owner, [$this, "runCommand"], [implode(" ", $args)]),
 			$secs * 20
 		);
@@ -167,7 +167,7 @@ class CmdAfterAt extends BasicCli implements CommandExecutor{
 			$when += 86400; // We can not travel back in time...
 		}
 		$c->sendMessage(mc::_("Scheduled for %1%", date(DATE_RFC2822, $when)));
-		$h = $this->owner->getServer()->getScheduler()->scheduleDelayedTask(
+		$h = $this->owner->getScheduler()->scheduleDelayedTask(
 			new PluginCallbackTask($this->owner, [$this, "runCommand"], [implode(" ", $args)]),
 			($when - time()) * 20
 		);

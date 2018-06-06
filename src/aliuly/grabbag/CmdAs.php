@@ -34,7 +34,7 @@ class CmdAs extends BasicCli implements CommandExecutor{
 			$sender->sendMessage(mc::_("Must specified a player and a command"));
 			return false;
 		}
-		$player = $this->owner->getServer()->getPlayer($n = array_shift($args));
+		$player = Server::getInstance()->getPlayer($n = array_shift($args));
 		if(!$player){
 			$sender->sendMessage(mc::_("Player %1% not found", $n));
 			return true;

@@ -1,10 +1,10 @@
 main: aliuly\grabbag\Main
-api: [3.0.0-ALPHA9, 3.0.0-ALPHA10, 3.0.0-ALPHA11, 3.0.0-ALPHA12]
+api: [3.0.0-ALPHA12]
 load: POSTWORLD
 
 name: GrabBag
 description: Collection of miscellaneous commands and listener modules
-version: 2.4.0-7
+version: 2.4.0-8
 author: aliuly
 website: https://github.com/Muirfield/GrabBag
 softdepend: FastTransfer

@@ -87,7 +87,7 @@ class CmdSrvModeMgr extends BasicCli implements CommandExecutor, Listener{
 		}else{
 			$task = new PluginCallbackTask($this->owner, [$this, "kickuser"], [$pl->getName()]);
 		}
-		$this->owner->getServer()->getScheduler()->scheduleDelayedTask($task, self::$delay);
+		$this->owner->getScheduler()->scheduleDelayedTask($task, self::$delay);
 	}
 
 	public function announce($pn){
