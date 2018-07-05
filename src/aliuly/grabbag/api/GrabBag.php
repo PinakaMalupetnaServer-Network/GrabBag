@@ -308,7 +308,7 @@ class GrabBag{
 	 * @param string        $report
 	 */
 	public function fileReport(CommandSender $c, $report){
-		$this->getModule("opms-rpt")->rptCmd($player, [">", $report]);
+		$this->getModule("opms-rpt")->rptCmd($c, [">", $report]);
 	}
 	//////////////////////////////////////////////////////////////
 	// CmdReOp

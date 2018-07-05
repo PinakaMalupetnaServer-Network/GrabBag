@@ -18,7 +18,6 @@ use aliuly\grabbag\common\BasicCli;
 use aliuly\grabbag\common\mc;
 use aliuly\grabbag\common\MPMU;
 use aliuly\grabbag\common\PermUtils;
-use AliasCmd;
 
 class CmdAlias extends BasicCli implements CommandExecutor{
 	protected $aliases;

@@ -20,10 +20,10 @@ use pocketmine\command\CommandExecutor;
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 use pocketmine\Player;
+use pocketmine\Server;
 
 use aliuly\grabbag\common\BasicCli;
 use aliuly\grabbag\common\mc;
-use aliuly\grabbag\common\MPMU;
 use aliuly\grabbag\common\RconTask;
 use aliuly\grabbag\common\Rcon;
 use aliuly\grabbag\common\PermUtils;

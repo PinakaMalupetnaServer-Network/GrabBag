@@ -76,7 +76,7 @@ class CmdChatMgr extends BasicCli implements Listener, CommandExecutor{
 	}
 
 	public function getPlayerChat($player){
-		return !$this->getState($to, false);
+		return !$this->getState($player, false);
 	}
 
 	public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool{

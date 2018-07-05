@@ -37,7 +37,7 @@ class CmdFTServers extends BasicCli implements CommandExecutor{
 		if(count($args) != 1) return false;
 		$id = $args[0];
 		if(($dat = $this->owner->getModule("ServerList")->getServer($id)) === null){
-			$c->sendMessage(TextFormat::RED . mc::_("%1% does not exist", $id));
+			$sender->sendMessage(TextFormat::RED . mc::_("%1% does not exist", $id));
 			return false;
 		}
 		if(!MPMU::inGame($sender)) return true;

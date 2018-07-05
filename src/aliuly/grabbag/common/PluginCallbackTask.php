@@ -24,6 +24,9 @@ class PluginCallbackTask extends Task{
 	/** @var array */
 	protected $args;
 
+	/** @var Plugin */
+	protected $plugin;
+
 	/**
 	 * @param Plugin   $owner
 	 * @param callable $callable

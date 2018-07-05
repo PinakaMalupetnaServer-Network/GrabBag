@@ -10,7 +10,6 @@ use pocketmine\plugin\PluginBase as Plugin;
 use pocketmine\event\Listener;
 
 use pocketmine\Player;
-use pocketmine\level\Position;
 use shoghicp\FastTransfer\PlayerTransferEvent;
 use pocketmine\math\Vector3;
 use pocketmine\level\particle\DustParticle;

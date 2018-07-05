@@ -51,7 +51,7 @@ class CmdSkinner extends BasicCli implements CommandExecutor{
 		if($folder === null) $folder = $this->owner->getDataFolder();
 		$bin = file_get_contents($folder . $fn);
 		if($bin === false) return false;
-		$human->setSkin(zlib_decode($bin), $slim);
+		$human->setSkin(zlib_decode($bin));
 		return true;
 	}
 

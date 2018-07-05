@@ -6,6 +6,7 @@ use pocketmine\command\CommandExecutor;
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 use aliuly\grabbag\common\Cmd;
+use aliuly\grabbag\common\mc;
 
 class AliasCmd implements CommandExecutor{
 	protected $cmd;

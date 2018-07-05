@@ -71,7 +71,7 @@ class ServerList extends BasicCli implements CommandExecutor{
 	public function rmServer($id){
 		if(!isset($this->servers[$id])) return true;
 		$this->owner->getServer()->getPluginManager()->callEvent(
-			$ev = new GbAddServerEvent($this->owner, $key, $val)
+			$ev = new GbAddServerEvent($this->owner, $id, $this->servers[$id]->getAttrs())
 		);
 		if($ev->isCancelled()) return false;
 		$id = $ev->getId();

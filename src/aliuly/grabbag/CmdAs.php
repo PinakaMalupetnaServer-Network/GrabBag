@@ -13,8 +13,8 @@ use aliuly\grabbag\common\mc;
 use aliuly\grabbag\common\MPMU;
 use aliuly\grabbag\common\PermUtils;
 
-use pocketmine\Player;
 use pocketmine\event\player\PlayerChatEvent;
+use pocketmine\Server;
 
 class CmdAs extends BasicCli implements CommandExecutor{
 
