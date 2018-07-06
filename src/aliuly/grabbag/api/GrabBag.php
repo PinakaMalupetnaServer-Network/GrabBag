@@ -6,9 +6,7 @@ use pocketmine\Player;
 use pocketmine\entity\Human;
 use pocketmine\command\CommandSender;
 
-use aliuly\grabbag\common\mc;
 use aliuly\grabbag\common\ExpandVars;
-use aliuly\grabbag\common\PMScript;
 
 /**
  * GrabBag API
@@ -81,16 +79,6 @@ class GrabBag{
 			$this->vars = new ExpandVars($this->plugin);
 		}
 		return $this->vars;
-	}
-
-	/**
-	 * Currently un-implemented
-	 */
-	public function getInterp(){
-		if($this->interp == null){
-			$this->interp = new PMScript($this->plugin, $this->getVars());
-		}
-		return $this->interp;
 	}
 
 	//////////////////////////////////////////////////////////////
