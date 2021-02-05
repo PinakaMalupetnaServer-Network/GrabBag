@@ -78,7 +78,7 @@ class CmdGmx extends BasicCli implements CommandExecutor{
 			if($mode !== $sender->getGamemode()){
 				$sender->sendMessage(TextFormat::RED . mc::_("Unable to change gamemode"));
 			}else{
-				$this->owner->getServer()->broadcastMessage(
+				$sender->sendMessage(
 					mc::_("%1% changed gamemode to %2% mode",
 						$sender->getName(), MPMU::gamemodeStr($mode)));
 			}
