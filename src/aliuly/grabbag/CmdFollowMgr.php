@@ -88,18 +88,18 @@ class CmdFollowMgr extends BasicCli implements Listener, CommandExecutor{
 					return true;
 				}
 				if(isset($this->followers[$s])){
-					$sender->sendMessage(mc::_("You are no longer following %1%",
+					$sender->sendPopup(mc::_("You are no longer following %1%",
 						$this->followers[$s]));
 					$this->stopFollowing($s);
 				}
-				$sender->sendMessage(mc::_("You are now following %1%", $n));
+				$sender->sendPopup(mc::_("You are now following %1%", $n));
 				$this->follow($s, $player);
 				return true;
 			case "follow-off":
 				if(!MPMU::inGame($sender)) return true;
 				if(count($args) != 0) return false;
 				if(isset($this->followers[$s])){
-					$sender->sendMessage(mc::_("You are no longer following %1%",
+					$sender->senPopup(mc::_("You are no longer following %1%",
 						$this->followers[$s]));
 					$this->stopFollowing($s);
 				}else{
